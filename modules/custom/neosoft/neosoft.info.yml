@@ -1,0 +1,12 @@
+name: Neosoft Custom Form Demo Module
+description: This is my Neosoft demo project custom form.
+package: Custom
+type: module
+core: 8.x
+dependencies:
+    - drupal:view_custom_table
+    - drupal:views_conditional
+
+# Information added by Drupal.org packaging script on 2019-10-02
+version: '1.0'
+project: 'Neosoft Demo Project'

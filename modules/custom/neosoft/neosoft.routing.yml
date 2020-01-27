@@ -1,0 +1,28 @@
+neosoft.add:
+  path: '/neosoft/add'
+  defaults:
+    _form: '\Drupal\neosoft\Form\NeosoftAddForm'
+    _title: 'Add Content Form, Neosoft Demo Project '
+  requirements:
+    _permission: 'access content'
+
+neosoft.edit:
+  path: '/neosoft/edit'
+  defaults:
+    _form: '\Drupal\neosoft\Form\NeosoftEditForm'
+    _title: 'Edit Content Form , Neosoft Demo Project'
+  requirements:
+    _permission: 'access content'
+
+neosoft.delete:
+  path: '/neosoft/delete'
+  defaults:
+    _form: '\Drupal\neosoft\Form\NeosoftDeleteForm'
+    _title: 'Delete Content Form , Neosoft Demo Project'
+  requirements:
+    _permission: 'access content'
+
+neosoft.list:
+  path: '/neosoft/list'
+  requirements:
+    _permission: 'access content'

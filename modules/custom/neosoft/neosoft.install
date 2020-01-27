@@ -1,0 +1,102 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the neosoft_form module.
+ */
+
+
+/**
+ * Implements hook_schema().
+ * Defines the database tables used by this module.
+ * @see hook_schema()
+ */
+function neosoft_schema() {
+  $schema['neosoft'] = [
+    'description' => 'This store neosoft detail for demonstration purposes.',
+    'fields' => [
+      'cid' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => "Primary Key: Unique comntact ID",
+      ],
+      'title' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'description' => 'Title of information',
+      ],
+      'short_desc' => [
+        'type' => 'text',
+        'not null' => TRUE,
+        'description' => 'short description',
+      ],
+      'long_desc' => [
+        'type' => 'text',
+        'not null' => TRUE,
+        'description' => 'content long description',
+      ],
+      'img' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'description' => 'image of the content',
+      ],
+      'status' => [
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => TRUE,
+        '#default_value' => 'Active',
+        '#options' => array('Active' => 'Active', 'Deactive' => 'Deactive'),
+      ],
+      'last_updated' => [
+        'type' => 'varchar',
+        'length' => 25,
+        'description' => 'The date time when the content created or updated.',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['cid'],
+    'indexes' => [
+      'title' => ['title'],
+    ],
+  ];
+
+  return $schema;
+}
+
+/**
+ * Implements hook_install().
+ * Creates some default entries on this module custom table.
+ * @see hook_install()
+ * @ingroup neosoft
+ */
+
+function neosoft_install() {
+  // Insert some example data into our schema.
+  $entries = [
+    [
+      'cid' => 1,
+      'title' => 'My Neosoft test record one',
+      'short_desc' => 'This is my neosoft test demo...',
+      'long_desc' => 'This is my assigments long descrition',
+      'img' => '/neosoft/sites/default/files/neosoft-img/test1.jpg',
+      'status' => 'Active',
+      'last_updated' => '2012-06-20 00:00:00'
+    ],
+    [
+      'cid' => 2,
+      'title' => 'My Neosoft test record two',
+      'short_desc' => 'This is my neosoft test demo record two...',
+      'long_desc' => 'This is my assigments long descrition record two',
+      'img' => '/neosoft/sites/default/files/neosoft-img/test1.jpg',
+      'status' => 'Active',
+      'last_updated' => '2012-06-20 00:00:00'
+    ]
+  ];
+
+  $connection = \Drupal::database();
+  foreach ($entries as $entry) {
+    $connection->insert('neosoft')->fields($entry)->execute();
+  }
+}

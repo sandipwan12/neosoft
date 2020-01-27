@@ -1,0 +1,14 @@
+neosoft.listing:
+  title: 'List Contact'
+  description: 'Create neosoft records list main menu link'
+  parent: main
+  menu_name: main
+  route_name: neosoft.list
+  weight: 9
+neosoft.addForm:
+  title: 'Add Contact'
+  description: 'Create neosoft records list main menu link'
+  parent: main
+  menu_name: main
+  route_name: neosoft.add
+  weight: 10
