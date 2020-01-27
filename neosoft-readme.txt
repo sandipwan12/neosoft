@@ -19,7 +19,7 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
 );
 
-Step6: import evolent_db.sql file that you already downloaded.
+Step6: import neosoft_db.sql (inside db folder in roor directory) file that you already downloaded.
 Step7: Ensure that there will be total 74 tables created.
 
 Step8: Open any Drupal 8 suppoted web browser to above directory path (like http://localhost/neosoft)
@@ -46,7 +46,7 @@ custom module name: neosoft
 path: XAMPP⁩ ▸ ⁨xamppfiles⁩ ▸ ⁨htdocs⁩ ▸ ⁨evolent⁩ ▸ ⁨modules⁩ ▸ ⁨custom⁩ ▸ neosoft
 
 Also for content list I creaded a drupal view table.
-admin path: http://localhost/evolent/admin/structure/views/view/neosoft_demo
+admin path: http://localhost/neosoft/admin/structure/views/view/neosoft_demo
 
 Also here I used two druapl constributed moduel
 1. view_custom_table module
